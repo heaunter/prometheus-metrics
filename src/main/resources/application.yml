@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: monitor-service
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        step: 1m
+        descriptions: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+      base-path: "/"
+
